@@ -5,12 +5,12 @@ require_relative '../config/environment'
 RSpec.configure do |config|
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-    DatabaseCleaner.start
-    DatabaseCleaner.clean
-    system('rake db:migrate')
-  end
-
+     DatabaseCleaner.clean_with(:truncation)
+     DatabaseCleaner.start
+     DatabaseCleaner.clean
+     system("rake db:migrate")
+     DB.tables
+   end
 end
 
 def __
